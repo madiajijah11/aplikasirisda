@@ -54,7 +54,7 @@ require_once 'include/auth.php';
               <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
               Struk
             </a>
-            <div class="sb-sidenav-menu-heading">Laporan</div>
+          <!--  <div class="sb-sidenav-menu-heading">Laporan</div>
             <a class="nav-link" href="laporan-peminjam-perbulan.php">
               <div class="sb-nav-link-icon"><i class="fas fa-print"></i></div>
               Peminjam Perbulan
@@ -74,7 +74,7 @@ require_once 'include/auth.php';
             <a class="nav-link" href="laporan-struk.php">
               <div class="sb-nav-link-icon"><i class="fas fa-print"></i></div>
               Struk
-            </a>
+            </a> -->
           </div>
         </div>
         <div class="sb-sidenav-footer">

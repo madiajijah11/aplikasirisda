@@ -20,7 +20,8 @@ if (isset($_POST['searchnasabahmenunggak'])) {
           <input class="form-control mr-sm-2" type="search" name="carinasabahmenunggak" placeholder="Cari">
           <button class="btn btn-outline-success mr-sm-2" type="submit" name="searchnasabahmenunggak">Cari</button>
           <a href="data-nasabah-menunggak.php" class="btn btn-danger mr-sm-2">Reset</a>
-          <a href="tambah-data-nasabah-menunggak.php" class="btn btn-primary float-right">Tambah Data</a>
+          <a href="tambah-data-nasabah-menunggak.php" class="btn btn-primary mr-sm-2">Tambah Data</a>
+          <a href="printall-nasabah-menunggak.php" class="btn btn-success" target="_blank">Print Semua</a>
         </form>
       </div>
       <div class="card-body">
@@ -53,6 +54,7 @@ if (isset($_POST['searchnasabahmenunggak'])) {
                 <td>
                   <a href="edit-data-nasabah-menunggak.php?id=<?= $row['id']; ?>" class="btn btn-warning">Edit</a>
                   <a href="hapus-data-nasabah-menunggak.php?id=<?= $row['id']; ?>" class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus?')">Hapus</a>
+                  <a href="print-nasabah-menunggak.php?id=<?= $row['id']; ?>" class="btn btn-success" target="_blank">Print</a>
                 </td>
               </tr>
               <?php $no++; ?>

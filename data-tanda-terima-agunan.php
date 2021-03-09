@@ -20,7 +20,8 @@ if (isset($_POST['searchtandaterimaagunan'])) {
           <input class="form-control mr-sm-2" type="search" name="caritandaterimaagunan" placeholder="Cari">
           <button class="btn btn-outline-success mr-sm-2" type="submit" name="searchtandaterimaagunan">Cari</button>
           <a href="data-tanda-terima-agunan.php" class="btn btn-danger mr-sm-2">Reset</a>
-          <a href="tambah-data-tanda-terima-agunan.php" class="btn btn-primary float-right">Tambah Data</a>
+          <a href="tambah-data-tanda-terima-agunan.php" class="btn btn-primary mr-sm-2">Tambah Data</a>
+          <a href="printall-tanda-terima-agunan.php" class="btn btn-success" target="_blank">Print Semua</a>
         </form>
       </div>
       <div class="card-body">
@@ -49,6 +50,7 @@ if (isset($_POST['searchtandaterimaagunan'])) {
                 <td>
                   <a href="edit-data-tanda-terima-agunan.php?id=<?= $row['id']; ?>" class="btn btn-warning">Edit</a>
                   <a href="hapus-data-tanda-terima-agunan.php?id=<?= $row['id']; ?>" class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus?')">Hapus</a>
+                  <a href="print-tanda-terima-agunan.php?id=<?= $row['id']; ?>" class="btn btn-success" target="_blank">Print</a>
                 </td>
               </tr>
               <?php $no++; ?>
