@@ -49,9 +49,9 @@ $pdf = new MYPDF('L', PDF_UNIT, 'A4', true, 'UTF-8', false);
 // set document information
 $pdf->SetCreator(PDF_CREATOR);
 $pdf->SetAuthor('Risda Roosyantie');
-$pdf->SetTitle('Nasabah Menunggak');
-$pdf->SetSubject('Nasabah Menunggak');
-$pdf->SetKeywords('Nasabah Menunggak');
+$pdf->SetTitle('Struk');
+$pdf->SetSubject('Struk');
+$pdf->SetKeywords('Struk');
 
 // set default header data
 $pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE, PDF_HEADER_STRING);
@@ -92,24 +92,23 @@ $pdf->AddPage();
 $pdf->Cell(0, 0.7, '==========================================================================================', 0, 0, 'C');
 $pdf->ln(10);
 $pdf->SetFont('helvetica', 'B', 14);
-$pdf->Cell(0, 0.7, 'Laporan Nasabah Menunggak', 0, 0, 'C');
+$pdf->Cell(0, 0.7, 'Laporan Data Struk', 0, 0, 'C');
 $pdf->ln(10);
 $pdf->SetFont('dejavusans', '', 10, '', true);
 $pdf->Cell(50, 10, "Print pada : " . date("d/m/Y"), 0, 0, 'C');
 $pdf->ln(10);
-
+$pdf->Cell(0. );
 // Set some content to print
 $tbl_header = '<table style="width: 100%; font-family: arial, sans-serif; border-collapse: collapse;" border="1" cellpadding="2" cellspacing="2">
 <thead>
       <tr style="text-align: center;">
           <th>NO</th>
           <th colspan="2">Nama Nasabah</th>
-          <th colspan="2">Nomor HP</th>
           <th colspan="4">Alamat</th>
           <th colspan="2">Nomor Rekening</th>
           <th colspan="2">Pinjaman</th>
-          <th colspan="2">Tanggal Jatuh Tempo</th>
-          <th colspan="2">Jumlah Menunggak</th>
+          <th colspan="2">Jangka Waktu</th>
+          <th colspan="2">Tgl Jatuh Tempo</th>
       </tr>
   </thead>
   <tbody>';
@@ -122,27 +121,25 @@ if (mysqli_connect_errno()) {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
 $id = $_GET['id'] ? $_GET['id'] : "";
-$result = mysqli_query($con, "SELECT * FROM nasabahmenunggak WHERE id='$id'");
+$result = mysqli_query($con, "SELECT * FROM struk WHERE id='$id'");
 $no = 0;
 while ($row = mysqli_fetch_array($result)) {
   $nama = $row['nama'];
-  $nohp = $row['nohp'];
   $alamat = $row['alamat'];
   $norekening = $row['norekening'];
   $pinjaman = $row['pinjaman'];
-  $tgljatuhtempo = $row['tgljatuhtempo'];
-  $jumlahmenunggak = $row['jumlahmenunggak'];
+  $tgljatuhtempo = $row['jangkawaktu'];
+  $jumlahmenunggak = $row['tgljatuhtempo'];
   $no++;
 
   $tbl .= '<tr style="text-align: left;">
               <td style="text-align: center;">' . $no . '</td>
               <td colspan="2">' . $row['nama'] . '</td>
-              <td colspan="2">' . $row['nohp'] . '</td>
               <td colspan="4">' . substr($row['alamat'], 0, 255) . '</td>
               <td colspan="2">' . $row['norekening'] . '</td>
               <td colspan="2">Rp.' . number_format($row['pinjaman'], 0, ',', '.') . '</td>
-              <td colspan="2" style="text-align: center;">' . $row['tgljatuhtempo'] . '</td>
-              <td colspan="2">Rp.' . number_format($row['jumlahmenunggak'], 0, ',', '.') . '</td>
+              <td colspan="2">' . $row['jangkawaktu'] . '</td>
+              <td colspan="2">' . $row['tgljatuhtempo'] . '</td>
           </tr>';
 }
 
@@ -154,4 +151,4 @@ $pdf->writeHTML($tbl_header . $tbl . $tbl_footer, true, false, false, false, '')
 // Close and output PDF document
 // This method has several options, check the source code documentation for more information.
 ob_end_clean();
-$pdf->Output('nasabah-menunggak.pdf', 'I');
+$pdf->Output('struk.pdf', 'I');

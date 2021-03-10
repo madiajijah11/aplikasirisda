@@ -92,7 +92,7 @@ $pdf->AddPage();
 $pdf->Cell(0, 0.7, '==========================================================================================', 0, 0, 'C');
 $pdf->ln(10);
 $pdf->SetFont('helvetica', 'B', 14);
-$pdf->Cell(0, 0.7, 'Laporan Data Peminjam Perbulan', 0, 0, 'C');
+$pdf->Cell(0, 0.7, 'Laporan Peminjam Perbulan', 0, 0, 'C');
 $pdf->ln(10);
 $pdf->SetFont('dejavusans', '', 10, '', true);
 $pdf->Cell(50, 10, "Print pada : " . date("d/m/Y"), 0, 0, 'C');
@@ -144,7 +144,7 @@ while ($row = mysqli_fetch_array($result)) {
               <td colspan="2">' . $row['norekening'] . '</td>
               <td colspan="2">Rp.' . number_format($row['angsuran'], 0, ',', '.') . '</td>
               <td colspan="2">Rp.' . number_format($row['pinjaman'], 0, ',', '.') . '</td>
-              <td colspan="2">' . $row['tglpencairan'] . '</td>
+              <td colspan="2" style="text-align: center;">' . $row['tglpencairan'] . '</td>
               <td colspan="2">' . $row['jangkawaktu'] . '</td>
           </tr>';
 }
