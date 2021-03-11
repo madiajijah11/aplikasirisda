@@ -24,7 +24,7 @@ if (isset($_POST['searchstruk'])) {
           <!-- <a href="printall-struk.php" class="btn btn-success" target="_blank">Print Semua</a> -->
         </form>
       </div>
-      <div class="card-body">
+      <div class="card-body table-responsive">
         <table class="table table-sm table-hover table-bordered">
           <thead>
             <tr>
@@ -50,9 +50,11 @@ if (isset($_POST['searchstruk'])) {
                 <td><?= $row['jangkawaktu']; ?></td>
                 <td><?= $row['tgljatuhtempo']; ?></td>
                 <td>
-                  <a href="edit-data-struk.php?id=<?= $row['id']; ?>" class="btn btn-warning">Edit</a>
-                  <a href="hapus-data-struk.php?id=<?= $row['id']; ?>" class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus?')">Hapus</a>
-                  <a href="print-struk.php?id=<?= $row['id']; ?>" class="btn btn-success" target="_blank">Print</a>
+                  <div class="btn-group">
+                    <a href="edit-data-struk.php?id=<?= $row['id']; ?>" class="btn btn-warning">Edit</a>
+                    <a href="hapus-data-struk.php?id=<?= $row['id']; ?>" class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus?')">Hapus</a>
+                    <a href="print-struk.php?id=<?= $row['id']; ?>" class="btn btn-success" target="_blank">Print</a>
+                  </div>
                 </td>
               </tr>
               <?php $no++; ?>

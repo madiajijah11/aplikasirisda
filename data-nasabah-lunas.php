@@ -21,10 +21,10 @@ if (isset($_POST['searchnasabahlunas'])) {
           <button class="btn btn-outline-success mr-sm-2" type="submit" name="searchnasabahlunas">Cari</button>
           <a href="data-nasabah-lunas.php" class="btn btn-danger mr-sm-2">Reset</a>
           <a href="tambah-data-nasabah-lunas.php" class="btn btn-primary mr-sm-2">Tambah Data</a>
-         <!-- <a href="printall-nasabah-lunas.php" class="btn btn-success" target="_blank">Print Semua</a> -->
+          <!-- <a href="printall-nasabah-lunas.php" class="btn btn-success" target="_blank">Print Semua</a> -->
         </form>
       </div>
-      <div class="card-body">
+      <div class="card-body table-responsive">
         <table class="table table-sm table-hover table-bordered">
           <thead>
             <tr>
@@ -52,9 +52,11 @@ if (isset($_POST['searchnasabahlunas'])) {
                 <td><?= $row['jangkawaktu']; ?></td>
                 <td><?= $row['status']; ?></td>
                 <td>
-                  <a href="edit-data-nasabah-lunas.php?id=<?= $row['id']; ?>" class="btn btn-warning">Edit</a>
-                  <a href="hapus-data-nasabah-lunas.php?id=<?= $row['id']; ?>" class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus?')">Hapus</a>
-                  <a href="print-nasabah-lunas.php?id=<?= $row['id']; ?>" class="btn btn-success" target="_blank">Print</a>
+                  <div class="btn-group">
+                    <a href="edit-data-nasabah-lunas.php?id=<?= $row['id']; ?>" class="btn btn-warning">Edit</a>
+                    <a href="hapus-data-nasabah-lunas.php?id=<?= $row['id']; ?>" class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus?')">Hapus</a>
+                    <a href="print-nasabah-lunas.php?id=<?= $row['id']; ?>" class="btn btn-success" target="_blank">Print</a>
+                  </div>
                 </td>
               </tr>
               <?php $no++; ?>

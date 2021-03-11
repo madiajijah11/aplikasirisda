@@ -24,7 +24,7 @@ if (isset($_POST['searchtandaterimaagunan'])) {
           <!-- <a href="printall-tanda-terima-agunan.php" class="btn btn-success" target="_blank">Print Semua</a> -->
         </form>
       </div>
-      <div class="card-body">
+      <div class="card-body table-responsive">
         <table class="table table-sm table-hover table-bordered">
           <thead>
             <tr>
@@ -48,9 +48,11 @@ if (isset($_POST['searchtandaterimaagunan'])) {
                 <td><img src="upload/<?= $row['images']; ?>" width="150" height="75"></td>
                 <td><?= $row['keterangansurat']; ?></td>
                 <td>
-                  <a href="edit-data-tanda-terima-agunan.php?id=<?= $row['id']; ?>" class="btn btn-warning">Edit</a>
-                  <a href="hapus-data-tanda-terima-agunan.php?id=<?= $row['id']; ?>" class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus?')">Hapus</a>
-                  <a href="print-tanda-terima-agunan.php?id=<?= $row['id']; ?>" class="btn btn-success" target="_blank">Print</a>
+                  <div class="btn-group">
+                    <a href="edit-data-tanda-terima-agunan.php?id=<?= $row['id']; ?>" class="btn btn-warning">Edit</a>
+                    <a href="hapus-data-tanda-terima-agunan.php?id=<?= $row['id']; ?>" class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus?')">Hapus</a>
+                    <a href="print-tanda-terima-agunan.php?id=<?= $row['id']; ?>" class="btn btn-success" target="_blank">Print</a>
+                  </div>
                 </td>
               </tr>
               <?php $no++; ?>

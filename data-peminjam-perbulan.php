@@ -24,7 +24,7 @@ if (isset($_POST['searchpeminjamperbulan'])) {
           <!-- <a href="printall-peminjam-perbulan.php" class="btn btn-success" target="_blank">Print Semua</a> -->
         </form>
       </div>
-      <div class="card-body">
+      <div class="card-body table-responsive">
         <table class="table table-sm table-hover table-bordered">
           <thead>
             <tr>
@@ -54,9 +54,11 @@ if (isset($_POST['searchpeminjamperbulan'])) {
                 <td><?= $row['tglpencairan']; ?></td>
                 <td><?= $row['jangkawaktu']; ?></td>
                 <td>
-                  <a href="edit-data-peminjam-perbulan.php?id=<?= $row['id']; ?>" class="btn btn-warning">Edit</a>
-                  <a href="hapus-data-peminjam-perbulan.php?id=<?= $row['id']; ?>" class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus?')">Hapus</a>
-                  <a href="print-peminjam-perbulan.php?id=<?= $row['id']; ?>" class="btn btn-success" target="_blank">Print</a>
+                  <div class="btn-group">
+                    <a href="edit-data-peminjam-perbulan.php?id=<?= $row['id']; ?>" class="btn btn-warning">Edit</a>
+                    <a href="hapus-data-peminjam-perbulan.php?id=<?= $row['id']; ?>" class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus?')">Hapus</a>
+                    <a href="print-peminjam-perbulan.php?id=<?= $row['id']; ?>" class="btn btn-success" target="_blank">Print</a>
+                  </div>
                 </td>
               </tr>
               <?php $no++; ?>
