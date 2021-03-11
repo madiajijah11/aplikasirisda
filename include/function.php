@@ -264,3 +264,23 @@ function caristruk($search)
   $query = "SELECT * FROM struk WHERE nama LIKE '%$search%' OR alamat LIKE '%$search%' OR norekening LIKE '%$search%' OR pinjaman LIKE '%$search%' OR jangkawaktu LIKE '%$search%' OR tgljatuhtempo LIKE '%$search%'";
   return query($query);
 }
+
+function isi_otomatis_nasabahlunas()
+{
+  global $link;
+  $nohp = $_GET['no$nohp'];
+
+  $query = mysqli_query($link, "SELECT * FROM nasabahlunas WHERE $nohp='$nohp'");
+  $row = mysqli_fetch_array($query);
+  $data = array(
+    'nama' => $row['nama'],
+    'alamat' => $row['alamat'],
+    'norekening' => $row['norekening'],
+    'pinjaman' => $row['pinjaman'],
+    'jangkawaktu' => $row['jangkawaktu'],
+    'status' => $row['status']
+  );
+
+  //tampil data
+  echo json_encode($data);
+}

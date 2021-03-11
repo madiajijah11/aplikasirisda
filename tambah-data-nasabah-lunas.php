@@ -34,7 +34,7 @@ if (isset($_POST['datanasabahlunas'])) {
           </div>
           <div class="form-group">
             <label for="nohp">Nomor HP</label>
-            <input type="number" class="form-control" name="nohp" placeholder="081298452573" required="required">
+            <input type="number" class="form-control" name="nohp" placeholder="081298452573" onkeyup="isi_otomatis_nasabahlunas()" required="required">
           </div>
           <div class="form-group">
             <label for="alamat">Alamat</label>
@@ -65,6 +65,24 @@ if (isset($_POST['datanasabahlunas'])) {
           <button type="reset" class="btn btn-warning">Clear</button>
           <a href="data-nasabah-lunas.php" class="btn btn-success" onclick="return confirm('Yakin kembali?')">Kembali</a>
         </form>
+        <script>
+          function isi_otomatis_nasabahlunas() {
+            var nohp = $("#nohp").val();
+            $.ajax({
+              url: 'function.php',
+              data: "nohp=" + nohp,
+            }).success(function(data) {
+              var json = data,
+                obj = JSON.parse(json);
+              $('#nama').val(obj.nama);
+              $('#alamat').val(obj.alamat);
+              $('#norekening').val(obj.norekening);
+              $('#pinjaman').val(obj.pinjaman);
+              $('#jangkawaktu').val(obj.jangkawaktu);
+              $('#status').val(obj.status);
+            });
+          }
+        </script>
       </div>
     </div>
   </div>
