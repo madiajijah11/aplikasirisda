@@ -29,6 +29,10 @@ require_once 'include/auth.php';
               <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
               Dashboard
             </a>
+            <a class="nav-link" href="data-nasabah.php">
+              <div class="sb-nav-link-icon"><i class="fas fa-photo-video"></i></div>
+              Data Nasabah
+            </a>
             <a class="nav-link" href="galeri.php">
               <div class="sb-nav-link-icon"><i class="fas fa-photo-video"></i></div>
               Galeri

@@ -284,3 +284,46 @@ function isi_otomatis_nasabahlunas()
   //tampil data
   echo json_encode($data);
 }
+
+function tambahdatanasabah($data)
+{
+  global $link;
+  $noktp = htmlspecialchars($data['noktp']);
+  $namalengkap = htmlspecialchars($data['namalengkap']);
+  $nohp = htmlspecialchars($data['nohp']);
+  $alamat = htmlspecialchars($data['alamat']);
+  $kota = htmlspecialchars($data['kota']);
+  $tmptlahir = htmlspecialchars($data['tmptlahir']);
+  $tgllahir = htmlspecialchars($data['tgllahir']);
+  $penghasilan = htmlspecialchars($data['penghasilan']);
+  $pekerjaan = htmlspecialchars($data['pekerjaan']);
+
+  $query = "INSERT INTO nasabah (noktp,namalengkap,nohp,alamat,kota,tmptlahir,tgllahir,penghasilan,pekerjaan) VALUES ('$noktp','$namalengkap','$nohp','$alamat','$kota','$tmptlahir','$tgllahir','$penghasilan','$pekerjaan')";
+  mysqli_query($link, $query);
+  return mysqli_affected_rows($link);
+}
+
+function editdatanasabah($data)
+{
+  global $link;
+  $id = $_GET['id'];
+  $noktp = htmlspecialchars($data['noktp']);
+  $nama = htmlspecialchars($data['nama']);
+  $nohp = htmlspecialchars($data['nohp']);
+  $alamat = htmlspecialchars($data['alamat']);
+  $kota = htmlspecialchars($data['kota']);
+  $tmptlahir = htmlspecialchars($data['tmptlahir']);
+  $tgllahir = htmlspecialchars($data['tgllahir']);
+  $penghasilan = htmlspecialchars($data['penghasilan']);
+  $pekerjaan = htmlspecialchars($data['pekerjaan']);
+
+  $query = "UPDATE struk SET noktp='$noktp', nama='$nama', nohp='$nohp', alamat='$alamat', kota='$kota', tmptlahir='$tmptlahir', tgllahir='$tgllahir', penghasilan='$penghasilan', pekerjaan='$pekerjaan' WHERE id='$id'";
+  mysqli_query($link, $query);
+  return mysqli_affected_rows($link);
+}
+
+function carinasabah($search)
+{
+  $query = "SELECT * FROM nasabah WHERE noktp LIKE '%$search%' OR nama LIKE '%$search%' OR nohp LIKE '%$search%' OR alamat LIKE '%$search%' OR kota LIKE '%$search%' OR tmptlahir LIKE '%$search%' OR tgllahir LIKE '%$search%' OR penghasilan LIKE '%$search%' OR pekerjaan LIKE '%$search%'";
+  return query($query);
+}
