@@ -43,9 +43,22 @@ if (isset($_POST['datanasabahmenunggak'])) {
             <label for="norekening">Nomor Rekening</label>
             <input type="number" class="form-control" name="norekening" placeholder="4531***********" required="required">
           </div>
-          <div class="form-group">
-            <label for="pinjaman">Pinjaman</label>
-            <input type="number" class="form-control" name="pinjaman" placeholder="600000" required="required">
+          <div class="form-group row-cols-lg-5">
+            <label for="pinjaman">Jumlah Pinjaman</label>
+            <select name="pinjaman" id="" required="required" class="form-control">
+              <option selected disabled>Pilih</option>
+              <option value="5000000">5.000.000</option>
+              <option value="10000000">10.000.000</option>
+              <option value="15000000">15.000.000</option>
+              <option value="20000000">20.000.000</option>
+              <option value="25000000">25.000.000</option>
+              <option value="30000000">30.000.000</option>
+              <option value="35000000">35.000.000</option>
+              <option value="40000000">40.000.000</option>
+              <option value="45000000">45.000.000</option>
+              <option value="50000000">50.000.000</option>
+            </select>
+            <!-- <input type="text" class="form-control" name="pinjaman" placeholder="Kawin/Belum Kawin/Cerai" required="required"> -->
           </div>
           <div class="form-group row-cols-lg-5">
             <label for="tgljatuhtempo">Tanggal Jatuh Tempo</label>

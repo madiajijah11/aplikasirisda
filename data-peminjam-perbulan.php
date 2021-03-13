@@ -21,7 +21,7 @@ if (isset($_POST['searchpeminjamperbulan'])) {
           <button class="btn btn-outline-success mr-sm-2" type="submit" name="searchpeminjamperbulan">Cari</button>
           <a href="data-peminjam-perbulan.php" class="btn btn-danger mr-sm-2">Reset</a>
           <a href="tambah-data-peminjam-perbulan.php" class="btn btn-primary mr-sm-2">Tambah Data</a>
-          <!-- <a href="printall-peminjam-perbulan.php" class="btn btn-success" target="_blank">Print Semua</a> -->
+          <a href="printall-peminjam-perbulan.php" class="btn btn-success" target="_blank">Print Semua</a>
         </form>
       </div>
       <div class="card-body table-responsive">
@@ -29,9 +29,12 @@ if (isset($_POST['searchpeminjamperbulan'])) {
           <thead>
             <tr>
               <th>NO</th>
+              <th>NIK</th>
               <th>Nama Peminjam</th>
               <th>Nomor HP</th>
               <th>Alamat</th>
+              <th>Jenis Kelamin</th>
+              <th>Status Kawin</th>
               <th>Nomor Rekening</th>
               <th>Angsuran</th>
               <th>Pinjaman</th>
@@ -45,9 +48,12 @@ if (isset($_POST['searchpeminjamperbulan'])) {
             <?php foreach ($sql as $row) : ?>
               <tr>
                 <td><?= $no++; ?></td>
+                <td><?= $row['nik']; ?></td>
                 <td><?= $row['nama']; ?></td>
                 <td><?= $row['nohp']; ?></td>
                 <td><?= substr($row['alamat'], 0, 255); ?></td>
+                <td><?= $row['jeniskelamin'] ?></td>
+                <td><?= $row['statuskawin'] ?></td>
                 <td><?= $row['norekening']; ?></td>
                 <td>Rp.<?= number_format($row['angsuran'], 0, ',', '.'); ?></td>
                 <td>Rp.<?= number_format($row['pinjaman'], 0, ',', '.'); ?></td>

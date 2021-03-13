@@ -13,7 +13,7 @@ if (isset($_POST['searchstruk'])) {
 
 <main>
   <div class="container-fluid">
-    <h1 class="mt-4">Data Struk</h1>
+    <h1 class="mt-4">Data Struk Pencairan Pinjaman</h1>
     <div class="card mb-4">
       <div class="card-header">Tabel
         <form class="form-inline my-2 my-lg-0 float-right" method="post">
@@ -21,7 +21,7 @@ if (isset($_POST['searchstruk'])) {
           <button class="btn btn-outline-success mr-sm-2" type="submit" name="searchstruk">Cari</button>
           <a href="data-struk.php" class="btn btn-danger mr-sm-2">Reset</a>
           <a href="tambah-data-struk.php" class="btn btn-primary mr-sm-2">Tambah Data</a>
-          <!-- <a href="printall-struk.php" class="btn btn-success" target="_blank">Print Semua</a> -->
+          <a href="printall-struk.php" class="btn btn-success" target="_blank">Print Semua</a>
         </form>
       </div>
       <div class="card-body table-responsive">

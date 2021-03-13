@@ -103,9 +103,12 @@ $tbl_header = '<table style="width: 100%; font-family: arial, sans-serif; border
 <thead>
       <tr style="text-align: center;">
           <th>NO</th>
+          <th colspan="2">NIK</th>
           <th colspan="2">Nama Nasabah</th>
           <th colspan="2">Nomor HP</th>
           <th colspan="4">Alamat</th>
+          <th colspan="2">Jenis Kelamin</th>
+          <th colspan="2">Status Perkawinan</th>
           <th colspan="2">Nomor Rekening</th>
           <th colspan="2">Pinjaman</th>
           <th colspan="2">Angsuran</th>
@@ -125,9 +128,12 @@ if (mysqli_connect_errno()) {
 $result = mysqli_query($con, "SELECT * FROM peminjamperbulan");
 $no = 0;
 while ($row = mysqli_fetch_array($result)) {
+  $nik = $row['nik'];
   $nama = $row['nama'];
   $nohp = $row['nohp'];
   $alamat = $row['alamat'];
+  $jeniskelamin = $row['jeniskelamin'];
+  $statuskawin = $row['statuskawin'];
   $norekening = $row['norekening'];
   $angsuran = $row['angsuran'];
   $pinjaman = $row['pinjaman'];
@@ -137,9 +143,12 @@ while ($row = mysqli_fetch_array($result)) {
 
   $tbl .= '<tr style="text-align: left;">
               <td style="text-align: center;">' . $no . '</td>
+              <td colspan="2">' . $row['nik'] . '</td>
               <td colspan="2">' . $row['nama'] . '</td>
               <td colspan="2">' . $row['nohp'] . '</td>
               <td colspan="4">' . substr($row['alamat'], 0, 255) . '</td>
+              <td colspan="2">' . $row['jeniskelamin'] . '</td>
+              <td colspan="2">' . $row['statuskawin'] . '</td>
               <td colspan="2">' . $row['norekening'] . '</td>
               <td colspan="2">Rp.' . number_format($row['angsuran'], 0, ',', '.') . '</td>
               <td colspan="2">Rp.' . number_format($row['pinjaman'], 0, ',', '.') . '</td>

@@ -49,10 +49,21 @@ if (isset($_POST['editnasabahmenunggak'])) {
             <label for="norekening">Nomor Rekening</label>
             <input type="number" class="form-control" name="norekening" value="<?= $row['norekening']; ?>">
           </div>
-          <div class="form-group">
-            <label for="pinjaman">Pinjaman</label>
-            <input type="number" class="form-control" name="pinjaman" value="<?= $row['pinjaman']; ?>">
-          </div>
+          <?php foreach ($sql as $row => $value): ?>
+          <select name="pinjaman" id="" required="required" class="form-control">
+            <option selected disabled>Pilih</option>
+            <option value="5000000 <?php if($value['pinjaman'] == '5000000'){echo 'selected="selected"';}?>">5.000.000</option>
+            <option value="10000000 <?php if($value['pinjaman'] == '10000000'){echo 'selected="selected"';}?>">10.000.000</option>
+            <option value="15000000 <?php if($value['pinjaman'] == '15000000'){echo 'selected="selected"';}?>">15.000.000</option>
+            <option value="20000000 <?php if($value['pinjaman'] == '20000000'){echo 'selected="selected"';}?>">20.000.000</option>
+            <option value="25000000 <?php if($value['pinjaman'] == '25000000'){echo 'selected="selected"';}?>">25.000.000</option>
+            <option value="30000000 <?php if($value['pinjaman'] == '30000000'){echo 'selected="selected"';}?>">30.000.000</option>
+            <option value="35000000 <?php if($value['pinjaman'] == '35000000'){echo 'selected="selected"';}?>">35.000.000</option>
+            <option value="40000000 <?php if($value['pinjaman'] == '40000000'){echo 'selected="selected"';}?>">40.000.000</option>
+            <option value="45000000 <?php if($value['pinjaman'] == '45000000'){echo 'selected="selected"';}?>">45.000.000</option>
+            <option value="50000000 <?php if($value['pinjaman'] == '50000000'){echo 'selected="selected"';}?>">50.000.000</option>
+          </select>
+        <?php endforeach; ?>
           <div class="form-group row-cols-lg-5">
             <label for="tgljatuhtempo">Tanggal Jatuh Tempo</label>
             <input type="date" class="form-control" name="tgljatuhtempo" pattern="\d{1,2}-\d{1,2}-\d{4}" value="<?= $row['tgljatuhtempo']; ?>">

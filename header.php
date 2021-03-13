@@ -29,10 +29,10 @@ require_once 'include/auth.php';
               <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
               Dashboard
             </a>
-            <a class="nav-link" href="data-nasabah.php">
+          <!--  <a class="nav-link" href="data-nasabah.php">
               <div class="sb-nav-link-icon"><i class="fas fa-photo-video"></i></div>
               Data Nasabah
-            </a>
+            </a> -->
             <a class="nav-link" href="galeri.php">
               <div class="sb-nav-link-icon"><i class="fas fa-photo-video"></i></div>
               Galeri
@@ -56,7 +56,7 @@ require_once 'include/auth.php';
             </a>
             <a class="nav-link" href="data-struk.php">
               <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-              Struk
+              Struk Pencairan Pinjaman
             </a>
           <!--  <div class="sb-sidenav-menu-heading">Laporan</div>
             <a class="nav-link" href="laporan-peminjam-perbulan.php">

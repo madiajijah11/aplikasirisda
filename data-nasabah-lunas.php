@@ -21,7 +21,7 @@ if (isset($_POST['searchnasabahlunas'])) {
           <button class="btn btn-outline-success mr-sm-2" type="submit" name="searchnasabahlunas">Cari</button>
           <a href="data-nasabah-lunas.php" class="btn btn-danger mr-sm-2">Reset</a>
           <a href="tambah-data-nasabah-lunas.php" class="btn btn-primary mr-sm-2">Tambah Data</a>
-          <!-- <a href="printall-nasabah-lunas.php" class="btn btn-success" target="_blank">Print Semua</a> -->
+          <a href="printall-nasabah-lunas.php" class="btn btn-success" target="_blank">Print Semua</a>
         </form>
       </div>
       <div class="card-body table-responsive">
