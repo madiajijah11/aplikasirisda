@@ -66,10 +66,6 @@ if (isset($_POST['datapeminjamperbulan'])) {
             <label for="norekening">Nomor Rekening</label>
             <input type="number" class="form-control" name="norekening" placeholder="4531***********" required="required">
           </div>
-          <div class="form-group">
-            <label for="angsuran">Angsuran</label>
-            <input type="number" class="form-control" name="angsuran" placeholder="300000" required="required">
-          </div>
           <div class="form-group row-cols-lg-5">
             <label for="pinjaman">Jumlah Pinjaman</label>
             <select name="pinjaman" id="" required="required" class="form-control">
@@ -86,6 +82,10 @@ if (isset($_POST['datapeminjamperbulan'])) {
               <option value="50000000">50.000.000</option>
             </select>
             <!-- <input type="text" class="form-control" name="pinjaman" placeholder="Kawin/Belum Kawin/Cerai" required="required"> -->
+          </div>
+          <div class="form-group">
+            <label for="angsuran">Angsuran</label>
+            <input type="number" class="form-control" name="angsuran" placeholder="300000" required="required">
           </div>
           <div class="form-group row-cols-lg-5">
             <label for="tglpencairan">Tanggal Pencairan</label>

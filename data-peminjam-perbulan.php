@@ -36,8 +36,8 @@ if (isset($_POST['searchpeminjamperbulan'])) {
               <th>Jenis Kelamin</th>
               <th>Status Kawin</th>
               <th>Nomor Rekening</th>
-              <th>Angsuran</th>
               <th>Pinjaman</th>
+              <th>Angsuran</th>
               <th>Tanggal Pencairan</th>
               <th>Jangka Waktu</th>
               <th>Aksi</th>
@@ -55,8 +55,8 @@ if (isset($_POST['searchpeminjamperbulan'])) {
                 <td><?= $row['jeniskelamin'] ?></td>
                 <td><?= $row['statuskawin'] ?></td>
                 <td><?= $row['norekening']; ?></td>
-                <td>Rp.<?= number_format($row['angsuran'], 0, ',', '.'); ?></td>
                 <td>Rp.<?= number_format($row['pinjaman'], 0, ',', '.'); ?></td>
+                <td>Rp.<?= number_format($row['angsuran'], 0, ',', '.'); ?></td>
                 <td><?= $row['tglpencairan']; ?></td>
                 <td><?= $row['jangkawaktu']; ?></td>
                 <td>

@@ -150,8 +150,8 @@ while ($row = mysqli_fetch_array($result)) {
               <td colspan="2">' . $row['jeniskelamin'] . '</td>
               <td colspan="2">' . $row['statuskawin'] . '</td>
               <td colspan="2">' . $row['norekening'] . '</td>
-              <td colspan="2">Rp.' . number_format($row['angsuran'], 0, ',', '.') . '</td>
               <td colspan="2">Rp.' . number_format($row['pinjaman'], 0, ',', '.') . '</td>
+              <td colspan="2">Rp.' . number_format($row['angsuran'], 0, ',', '.') . '</td>
               <td colspan="2">' . $row['tglpencairan'] . '</td>
               <td colspan="2">' . $row['jangkawaktu'] . '</td>
           </tr>';

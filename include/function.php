@@ -29,16 +29,19 @@ function query($query)
 function tambahdatapeminjamperbulan($data)
 {
   global $link;
+  $nik = htmlspecialchars($data['nik']);
   $nama = htmlspecialchars($data['nama']);
   $nohp = htmlspecialchars($data['nohp']);
   $alamat = htmlspecialchars($data['alamat']);
+  $jeniskelamin = htmlspecialchars($data['jeniskelamin']);
+  $statuskawin = htmlspecialchars($data['statuskawin']);
   $norekening = htmlspecialchars($data['norekening']);
   $angsuran = htmlspecialchars($data['angsuran']);
   $pinjaman = htmlspecialchars($data['pinjaman']);
   $tglpencairan = htmlspecialchars($data['tglpencairan']);
   $jangkawaktu = htmlspecialchars($data['jangkawaktu']);
 
-  $query = "INSERT INTO peminjamperbulan (nama,nohp,alamat,norekening,angsuran,pinjaman,tglpencairan,jangkawaktu) VALUES ('$nama','$nohp','$alamat','$norekening','$angsuran','$pinjaman','$tglpencairan','$jangkawaktu')";
+  $query = "INSERT INTO peminjamperbulan (nik,nama,nohp,alamat,jeniskelamin,statuskawin,norekening,angsuran,pinjaman,tglpencairan,jangkawaktu) VALUES ('$nik','$nama','$nohp','$alamat','$jeniskelamin','$statuskawin','$norekening','$angsuran','$pinjaman','$tglpencairan','$jangkawaktu')";
   mysqli_query($link, $query);
   return mysqli_affected_rows($link);
 }
@@ -47,16 +50,19 @@ function editdatapeminjamperbulan($data)
 {
   global $link;
   $id = $_GET['id'];
+  $nik = htmlspecialchars($data['nik']);
   $nama = htmlspecialchars($data['nama']);
   $nohp = htmlspecialchars($data['nohp']);
   $alamat = htmlspecialchars($data['alamat']);
+  $jeniskelamin = htmlspecialchars($data['jeniskelamin']);
+  $statuskawin = htmlspecialchars($data['statuskawin']);
   $norekening = htmlspecialchars($data['norekening']);
   $angsuran = htmlspecialchars($data['angsuran']);
   $pinjaman = htmlspecialchars($data['pinjaman']);
   $tglpencairan = htmlspecialchars($data['tglpencairan']);
   $jangkawaktu = htmlspecialchars($data['jangkawaktu']);
 
-  $query = "UPDATE peminjamperbulan SET nama='$nama', nohp='$nohp', alamat='$alamat', norekening='$norekening', angsuran='$angsuran', pinjaman='$pinjaman', tglpencairan='$tglpencairan', jangkawaktu='$jangkawaktu' WHERE id='$id'";
+  $query = "UPDATE peminjamperbulan SET nik='$nik', nama='$nama', nohp='$nohp', alamat='$alamat', jeniskelamin='$jeniskelamin', statuskawin='$statuskawin', norekening='$norekening', angsuran='$angsuran', pinjaman='$pinjaman', tglpencairan='$tglpencairan', jangkawaktu='$jangkawaktu' WHERE id='$id'";
   mysqli_query($link, $query);
   return mysqli_affected_rows($link);
 }

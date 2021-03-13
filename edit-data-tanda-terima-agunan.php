@@ -57,28 +57,28 @@ if (isset($_GET['id'])) {
       </div>
       <div class="card-body">
         <form class="form-item" action="update-tanda-terima-agunan.php" method="post" role="form" enctype="multipart/form-data">
-          <input type="hidden" name="id" id="id" value="<?= $row['id']; ?>">
+          <input type="hidden" name="id" id="id" value="<?= $row['id'] ?>">
           <div class="form-group">
             <label for="nama">Nama Lengkap</label>
-            <input type="text" class="form-control" name="nama" value="<?= $row['nama']; ?>">
+            <input type="text" class="form-control" name="nama" required="required" value="<?= $row['nama'] ?>">
           </div>
           <div class="form-group">
             <label for="nohp">Nomor HP</label>
-            <input type="number" class="form-control" name="nohp" value="<?= $row['nohp']; ?>">
+            <input type="number" class="form-control" name="nohp" required="required" value="<?= $row['nohp'] ?>">
           </div>
           <div class="form-group">
             <label for="alamat">Alamat</label>
-            <textarea class="form-control" name="alamat"><?= $row['alamat']; ?></textarea>
+            <textarea class="form-control" name="alamat" required="required"><?= $row['alamat'] ?></textarea>
           </div>
           <div class="form-group">
             <label for="images">Scan Surat</label>
-            <img src="upload/<?= $row['images']; ?>" width="800" height="400">
+            <img src="upload/<?= $row['images'] ?>" width="800" height="400">
             <input type="file" class="form-control" name="images">
             <p><strong>Catatan:</strong> Hanya format .png .jpg .jpeg yang diperbolehkan dengan ukuran maksimal 2 MB.</p>
           </div>
           <div class="form-group">
             <label for="keterangansurat">Keterangan Surat</label>
-            <input type="text" class="form-control" name="keterangansurat" value="<?= $row['keterangansurat']; ?>">
+            <input type="text" class="form-control" name="keterangansurat" required="required" value="<?= $row['keterangansurat'] ?>">
           </div>
           <button type="submit" name="edittandaterimaagunan" class="btn btn-primary" onclick="return confirm('Simpan perubahan?')">Edit</button>
           <a href="data-tanda-terima-agunan.php" class="btn btn-warning" onclick="return confirm('Yakin batal edit?')">Kembali</a>

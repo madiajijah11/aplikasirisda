@@ -46,8 +46,8 @@ require_once 'include/auth.php';
                 <td><?= $row['jeniskelamin'] ?></td>
                 <td><?= $row['statuskawin'] ?></td>
                 <td><?= $row['norekening']; ?></td>
-                <td>Rp.<?= number_format($row['angsuran'], 0, ',', '.'); ?></td>
                 <td>Rp.<?= number_format($row['pinjaman'], 0, ',', '.'); ?></td>
+                <td>Rp.<?= number_format($row['angsuran'], 0, ',', '.'); ?></td>
                 <td><?= $row['tglpencairan']; ?></td>
                 <td><?= $row['jangkawaktu']; ?></td>
               </tr>
