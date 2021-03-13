@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 23, 2021 at 06:53 PM
+-- Generation Time: Mar 13, 2021 at 06:43 AM
 -- Server version: 10.4.17-MariaDB
--- PHP Version: 7.4.15
+-- PHP Version: 8.0.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,6 +20,32 @@ SET time_zone = "+00:00";
 --
 -- Database: `aplikasirisda`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `nasabah`
+--
+
+CREATE TABLE `nasabah` (
+  `id` int(11) NOT NULL,
+  `noktp` varchar(255) NOT NULL,
+  `nama` varchar(255) NOT NULL,
+  `nohp` varchar(255) NOT NULL,
+  `alamat` text NOT NULL,
+  `kota` varchar(255) NOT NULL,
+  `tmptlahir` varchar(255) NOT NULL,
+  `tgllahir` date NOT NULL,
+  `penghasilan` varchar(255) NOT NULL,
+  `pekerjaan` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `nasabah`
+--
+
+INSERT INTO `nasabah` (`id`, `noktp`, `nama`, `nohp`, `alamat`, `kota`, `tmptlahir`, `tgllahir`, `penghasilan`, `pekerjaan`) VALUES
+(1, '321654987', 'Dian Rahmadani', '082256964453', 'Jalan Bumi Mas Raya', 'Banjarmasin', 'Tarakan', '1998-01-02', '13000000', 'CEO');
 
 -- --------------------------------------------------------
 
@@ -43,8 +69,7 @@ CREATE TABLE `nasabahlunas` (
 --
 
 INSERT INTO `nasabahlunas` (`id`, `nama`, `nohp`, `alamat`, `norekening`, `pinjaman`, `jangkawaktu`, `status`) VALUES
-(1, 'Risda Roosy', '987654321', '987654321', '987654321', '987654312', '5 Tahun', 'Lunas'),
-(2, 'diannnn', '0564231563', 'jalan bumi mas', '05445123841', '68794561321', '6 Bulan', 'Belum Lunas');
+(3, 'Dian Rahmadani', '082256964453', 'Banjarmasin', '8020119980', '25000000', '24 Bulan', 'Belum Lunas');
 
 -- --------------------------------------------------------
 
@@ -68,8 +93,7 @@ CREATE TABLE `nasabahmenunggak` (
 --
 
 INSERT INTO `nasabahmenunggak` (`id`, `nama`, `nohp`, `alamat`, `norekening`, `pinjaman`, `tgljatuhtempo`, `jumlahmenunggak`) VALUES
-(1, 'Dian', '132456789', '123456789', '123456879', '123456789', '2021-04-15', '987654321'),
-(2, 'risdaaaa', '0312654987', 'asdfghjkl', '123456789', '321654978', '2021-03-13', '123456789');
+(3, 'Dian Rahmadani', '082256964453', 'Banjarmasin', '8020119980', '25000000', '2023-03-13', '20000000');
 
 -- --------------------------------------------------------
 
@@ -79,9 +103,12 @@ INSERT INTO `nasabahmenunggak` (`id`, `nama`, `nohp`, `alamat`, `norekening`, `p
 
 CREATE TABLE `peminjamperbulan` (
   `id` int(11) NOT NULL,
+  `nik` varchar(255) NOT NULL,
   `nama` varchar(255) NOT NULL,
   `nohp` varchar(255) NOT NULL,
   `alamat` text NOT NULL,
+  `jeniskelamin` varchar(255) NOT NULL,
+  `statuskawin` varchar(255) NOT NULL,
   `norekening` varchar(255) NOT NULL,
   `angsuran` varchar(255) NOT NULL,
   `pinjaman` varchar(255) NOT NULL,
@@ -93,9 +120,8 @@ CREATE TABLE `peminjamperbulan` (
 -- Dumping data for table `peminjamperbulan`
 --
 
-INSERT INTO `peminjamperbulan` (`id`, `nama`, `nohp`, `alamat`, `norekening`, `angsuran`, `pinjaman`, `tglpencairan`, `jangkawaktu`) VALUES
-(2, 'Risda', '987654321', 'lkjhgfdsa', '987654321', '987654321', '987654321', '2021-01-10', '5 Tahun'),
-(4, 'As Achry', '3215649871', 'jalan pramuka1', '3216549781', '1234567891', '1324567891231', '2021-02-16', '4 Tahun1');
+INSERT INTO `peminjamperbulan` (`id`, `nik`, `nama`, `nohp`, `alamat`, `jeniskelamin`, `statuskawin`, `norekening`, `angsuran`, `pinjaman`, `tglpencairan`, `jangkawaktu`) VALUES
+(7, '16630074', 'Dian Rahmadani', '082256964453', 'Banjarmasin', 'Laki-laki', 'Belum Kawin', '8020119980', '1000000', '25000000', '2021-03-13', '24 Bulan');
 
 -- --------------------------------------------------------
 
@@ -139,7 +165,7 @@ CREATE TABLE `struk` (
 --
 
 INSERT INTO `struk` (`id`, `nama`, `alamat`, `norekening`, `pinjaman`, `jangkawaktu`, `tgljatuhtempo`) VALUES
-(1, 'sadfsadfsadf', 'sdfsdfsdfsdfsfd', '2343243242', '124214241', 'asdfasdsada', '2021-02-17');
+(3, 'Dian Rahmadani', 'Banjarmasin', '8020119980', '25000000', '24 Bulan', '2021-03-13');
 
 -- --------------------------------------------------------
 
@@ -161,13 +187,18 @@ CREATE TABLE `tandaterimaagunan` (
 --
 
 INSERT INTO `tandaterimaagunan` (`id`, `nama`, `nohp`, `alamat`, `images`, `keterangansurat`) VALUES
-(4, 'Risda Roosyantie', '082256964453', 'Banjarmasin', '1375614878_Diagram Konteks.png', 'Surat Menikah'),
-(5, 'Dian Rahmadani', '0822316855423', 'Banjarmasin', '857-Rancangan Antarmuka.png', 'Surat Kawin'),
-(7, 'testing', '1234567890', 'testing', '831-Antarmuka Tables.png', 'testing');
+(4, 'Dian Rahmadani', '082256964453', 'Banjarmasin', '1375614878_Diagram Konteks.png', 'Surat Menikah');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `nasabah`
+--
+ALTER TABLE `nasabah`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `noktp` (`noktp`);
 
 --
 -- Indexes for table `nasabahlunas`
@@ -211,22 +242,28 @@ ALTER TABLE `tandaterimaagunan`
 --
 
 --
+-- AUTO_INCREMENT for table `nasabah`
+--
+ALTER TABLE `nasabah`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `nasabahlunas`
 --
 ALTER TABLE `nasabahlunas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `nasabahmenunggak`
 --
 ALTER TABLE `nasabahmenunggak`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `peminjamperbulan`
 --
 ALTER TABLE `peminjamperbulan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `pengguna`
@@ -238,7 +275,7 @@ ALTER TABLE `pengguna`
 -- AUTO_INCREMENT for table `struk`
 --
 ALTER TABLE `struk`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tandaterimaagunan`
