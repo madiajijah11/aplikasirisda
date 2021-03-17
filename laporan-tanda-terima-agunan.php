@@ -10,7 +10,7 @@ require_once 'include/auth.php';
     <h1 class="mt-4">Data Tanda Terima Agunan</h1>
     <div class="card mb-4">
       <div class="card-header">Tabel
-        <a href="printall-tanda-terima-agunan.php" target="_blank" class="btn btn-primary float-right">Print Semua</a>
+        <a href="printall-tanda-terima-agunan.php" target="_blank" class="btn btn-primary float-right"><i class="fas fa-print"></i>Print Semua</a>
       </div>
       <div class="card-body">
         <table class="table table-sm table-hover table-bordered">

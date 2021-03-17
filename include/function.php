@@ -76,9 +76,10 @@ function tambahdatanasabahmenunggak($data)
   $norekening = htmlspecialchars($data['norekening']);
   $pinjaman = htmlspecialchars($data['pinjaman']);
   $tgljatuhtempo = htmlspecialchars($data['tgljatuhtempo']);
+  $iuran = htmlspecialchars($data['iuran']);
   $jumlahmenunggak = htmlspecialchars($data['jumlahmenunggak']);
 
-  $query = "INSERT INTO nasabahmenunggak (nama,nohp,alamat,norekening,pinjaman,tgljatuhtempo,jumlahmenunggak) VALUES ('$nama','$nohp','$alamat','$norekening','$pinjaman','$tgljatuhtempo','$jumlahmenunggak')";
+  $query = "INSERT INTO nasabahmenunggak (nama,nohp,alamat,norekening,pinjaman,tgljatuhtempo,iuran,jumlahmenunggak) VALUES ('$nama','$nohp','$alamat','$norekening','$pinjaman','$tgljatuhtempo','$iuran','$jumlahmenunggak')";
   mysqli_query($link, $query);
   return mysqli_affected_rows($link);
 }
@@ -93,9 +94,10 @@ function editdatanasabahmenunggak($data)
   $norekening = htmlspecialchars($data['norekening']);
   $pinjaman = htmlspecialchars($data['pinjaman']);
   $tgljatuhtempo = htmlspecialchars($data['tgljatuhtempo']);
+  $iuran = htmlspecialchars($data['iuran']);
   $jumlahmenunggak = htmlspecialchars($data['jumlahmenunggak']);
 
-  $query = "UPDATE nasabahmenunggak SET nama='$nama', nohp='$nohp', alamat='$alamat', norekening='$norekening', pinjaman='$pinjaman', tgljatuhtempo='$tgljatuhtempo', jumlahmenunggak='$jumlahmenunggak' WHERE id='$id'";
+  $query = "UPDATE nasabahmenunggak SET nama='$nama', nohp='$nohp', alamat='$alamat', norekening='$norekening', pinjaman='$pinjaman', tgljatuhtempo='$tgljatuhtempo', iuran='$iuran', jumlahmenunggak='$jumlahmenunggak' WHERE id='$id'";
   mysqli_query($link, $query);
   return mysqli_affected_rows($link);
 }

@@ -21,7 +21,7 @@ if (isset($_POST['searchnasabahmenunggak'])) {
           <button class="btn btn-outline-success mr-sm-2" type="submit" name="searchnasabahmenunggak">Cari</button>
           <a href="data-nasabah-menunggak.php" class="btn btn-danger mr-sm-2">Reset</a>
           <a href="tambah-data-nasabah-menunggak.php" class="btn btn-primary mr-sm-2">Tambah Data</a>
-          <a href="printall-nasabah-menunggak.php" class="btn btn-success" target="_blank">Print Semua</a>
+         <!-- <a href="printall-nasabah-menunggak.php" class="btn btn-success" target="_blank">Print Semua</a> -->
         </form>
       </div>
       <div class="card-body table-responsive">
@@ -35,13 +35,20 @@ if (isset($_POST['searchnasabahmenunggak'])) {
               <th>Nomor Rekening</th>
               <th>Pinjaman</th>
               <th>Tanggal Jatuh Tempo</th>
+              <!-- <th>Sisa Waktu</th> -->
+              <th>Iuran</th>
               <th>Jumlah Menunggak</th>
               <th>Aksi</th>
             </tr>
           </thead>
           <tbody>
             <?php $no = 1; ?>
-            <?php foreach ($sql as $row) : ?>
+            <?php
+            foreach ($sql as $row) :
+            $tempo = new DateTime($row['tgljatuhtempo']);
+            $sekarang = new DateTime();
+            $diff = $sekarang->diff($tempo);
+            ?>
               <tr>
                 <td><?= $no++; ?></td>
                 <td><?= $row['nama']; ?></td>
@@ -50,6 +57,8 @@ if (isset($_POST['searchnasabahmenunggak'])) {
                 <td><?= $row['norekening']; ?></td>
                 <td>Rp.<?= number_format($row['pinjaman'], 0, ',', '.'); ?></td>
                 <td><?= $row['tgljatuhtempo']; ?></td>
+                <!-- <td> //$diff->y . " Tahun, ", $diff->m . " Bulan, ", $diff->d . " Hari"; </td> -->
+                <td>Rp.<?= number_format($row['iuran'], 0, ',', '.'); ?></td>
                 <td>Rp.<?= number_format($row['jumlahmenunggak'], 0, ',', '.'); ?></td>
                 <td>
                   <div class="btn-group">

@@ -65,8 +65,12 @@ if (isset($_POST['datanasabahmenunggak'])) {
             <input type="date" class="form-control" name="tgljatuhtempo" pattern="\d{1,2}-\d{1,2}-\d{4}" required="required">
           </div>
           <div class="form-group">
+            <label for="iuran">Iuran</label>
+            <input type="text" class="form-control" name="iuran" placeholder="8.000.000" required="required">
+          </div>
+          <div class="form-group">
             <label for="jumlahmenunggak">Jumlah Menunggak</label>
-            <input type="text" class="form-control" name="jumlahmenunggak" placeholder="400000" required="required">
+            <input type="text" class="form-control" name="jumlahmenunggak" placeholder="400.000" required="required">
           </div>
           <button type="submit" name="datanasabahmenunggak" class="btn btn-primary" onclick="return confirm('Yakin ingin menyimpan?')">Simpan</button>
           <button type="reset" class="btn btn-warning">Clear</button>

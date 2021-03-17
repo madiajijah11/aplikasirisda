@@ -4,7 +4,7 @@ include 'header.php';
 require_once 'include/auth.php';
 require "include/function.php";
 
-$sql = mysqli_query($link, "SELECT * FROM peminjamperbulan ORDER BY id DESC");
+$sql = mysqli_query($link, "SELECT * FROM peminjamperbulan ORDER BY pinjaman ASC");
 if (isset($_POST['searchpeminjamperbulan'])) {
   $sql = caripeminjamperbulan($_POST['caripeminjamperbulan']);
 }
@@ -21,7 +21,7 @@ if (isset($_POST['searchpeminjamperbulan'])) {
           <button class="btn btn-outline-success mr-sm-2" type="submit" name="searchpeminjamperbulan">Cari</button>
           <a href="data-peminjam-perbulan.php" class="btn btn-danger mr-sm-2">Reset</a>
           <a href="tambah-data-peminjam-perbulan.php" class="btn btn-primary mr-sm-2">Tambah Data</a>
-          <a href="printall-peminjam-perbulan.php" class="btn btn-success" target="_blank">Print Semua</a>
+         <!-- <a href="printall-peminjam-perbulan.php" class="btn btn-success" target="_blank">Print Semua</a> -->
         </form>
       </div>
       <div class="card-body table-responsive">

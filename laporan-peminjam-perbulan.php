@@ -34,7 +34,7 @@ require_once 'include/auth.php';
             <?php
             require "include/function.php";
             $no = 1;
-            $sql = mysqli_query($link, "SELECT * FROM peminjamperbulan");
+            $sql = mysqli_query($link, "SELECT * FROM peminjamperbulan ORDER BY pinjaman ASC");
             while ($row = mysqli_fetch_array($sql)) {
               ?>
               <tr>

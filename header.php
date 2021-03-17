@@ -29,7 +29,7 @@ require_once 'include/auth.php';
               <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
               Dashboard
             </a>
-          <!--  <a class="nav-link" href="data-nasabah.php">
+            <!--  <a class="nav-link" href="data-nasabah.php">
               <div class="sb-nav-link-icon"><i class="fas fa-photo-video"></i></div>
               Data Nasabah
             </a> -->
@@ -39,26 +39,58 @@ require_once 'include/auth.php';
             </a>
             <div class="sb-sidenav-menu-heading">Data</div>
             <a class="nav-link" href="data-peminjam-perbulan.php">
-              <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+              <div class="sb-nav-link-icon"><i class="fas fa-database"></i></div>
               Peminjam Perbulan
             </a>
             <a class="nav-link" href="data-nasabah-menunggak.php">
-              <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+              <div class="sb-nav-link-icon"><i class="fas fa-database"></i></div>
               Nasabah Menunggak
             </a>
             <a class="nav-link" href="data-nasabah-lunas.php">
-              <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+              <div class="sb-nav-link-icon"><i class="fas fa-database"></i></div>
               Nasabah Lunas
             </a>
             <a class="nav-link" href="data-tanda-terima-agunan.php">
-              <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+              <div class="sb-nav-link-icon"><i class="fas fa-database"></i></div>
               Tanda Terima Agunan
             </a>
             <a class="nav-link" href="data-struk.php">
-              <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+              <div class="sb-nav-link-icon"><i class="fas fa-database"></i></div>
               Struk Pencairan Pinjaman
             </a>
-          <!--  <div class="sb-sidenav-menu-heading">Laporan</div>
+            <div class="sb-sidenav-menu-heading">Laporan</div>
+            <div class="accordion" id="accordionExample">
+              <div class="" id="headingOne">
+                <a class="nav-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  <i class="fas fa-list"></i>&nbsp;List Laporan &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="sb-nav-link-icon"><i class="fas fa-arrow-down"></i></div>
+                </a>
+              </div>
+              <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <a class="nav-link" href="laporan-peminjam-perbulan.php">
+                  <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                  Peminjam Perbulan
+                </a>
+                <a class="nav-link" href="laporan-nasabah-menunggak.php">
+                  <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                  Nasabah Menunggak
+                </a>
+                <a class="nav-link" href="laporan-nasabah-lunas.php">
+                  <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                  Nasabah Lunas
+                </a>
+                <a class="nav-link" href="laporan-tanda-terima-agunan.php">
+                  <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                  Tanda Terima Agunan
+                </a>
+                <a class="nav-link" href="laporan-struk.php">
+                  <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                  Struk Pencairan Pinjaman
+                </a>
+              </div>
+            </div>
+
+            <!-- Remove this comment if u want use
+            <div class="sb-sidenav-menu-heading">Laporan</div>
             <a class="nav-link" href="laporan-peminjam-perbulan.php">
               <div class="sb-nav-link-icon"><i class="fas fa-print"></i></div>
               Peminjam Perbulan

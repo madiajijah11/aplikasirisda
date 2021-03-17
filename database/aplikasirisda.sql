@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 13, 2021 at 06:43 AM
+-- Generation Time: Mar 17, 2021 at 10:34 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.2
 
@@ -85,6 +85,7 @@ CREATE TABLE `nasabahmenunggak` (
   `norekening` varchar(255) NOT NULL,
   `pinjaman` varchar(255) NOT NULL,
   `tgljatuhtempo` date NOT NULL,
+  `iuran` varchar(255) NOT NULL,
   `jumlahmenunggak` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -92,8 +93,8 @@ CREATE TABLE `nasabahmenunggak` (
 -- Dumping data for table `nasabahmenunggak`
 --
 
-INSERT INTO `nasabahmenunggak` (`id`, `nama`, `nohp`, `alamat`, `norekening`, `pinjaman`, `tgljatuhtempo`, `jumlahmenunggak`) VALUES
-(3, 'Dian Rahmadani', '082256964453', 'Banjarmasin', '8020119980', '25000000', '2023-03-13', '20000000');
+INSERT INTO `nasabahmenunggak` (`id`, `nama`, `nohp`, `alamat`, `norekening`, `pinjaman`, `tgljatuhtempo`, `iuran`, `jumlahmenunggak`) VALUES
+(3, 'Dian Rahmadani', '082256964453', 'Banjarmasin', '8020119980', '25000000', '2023-03-13', '2500000', '20000000');
 
 -- --------------------------------------------------------
 
@@ -121,7 +122,8 @@ CREATE TABLE `peminjamperbulan` (
 --
 
 INSERT INTO `peminjamperbulan` (`id`, `nik`, `nama`, `nohp`, `alamat`, `jeniskelamin`, `statuskawin`, `norekening`, `angsuran`, `pinjaman`, `tglpencairan`, `jangkawaktu`) VALUES
-(7, '16630074', 'Dian Rahmadani', '082256964453', 'Banjarmasin', 'Laki-laki', 'Belum Kawin', '8020119980', '1000000', '25000000', '2021-03-13', '24 Bulan');
+(7, '16630074', 'Dian Rahmadani', '082256964453', 'Banjarmasin', 'Laki-laki', 'Belum Kawin', '8020119980', '1000000', '25000000', '2021-03-13', '24 Bulan'),
+(8, '16630071', 'Ardi Ramadani Zarkoni', '082256964452', 'Banjarmasin Tengah', 'Laki-laki', 'Belum Kawin', '8020116652', '5000000', '45000000', '2021-03-16', '60 Bulan');
 
 -- --------------------------------------------------------
 
@@ -263,7 +265,7 @@ ALTER TABLE `nasabahmenunggak`
 -- AUTO_INCREMENT for table `peminjamperbulan`
 --
 ALTER TABLE `peminjamperbulan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `pengguna`
