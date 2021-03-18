@@ -72,7 +72,7 @@ if (isset($_POST['editnasabahmenunggak'])) {
           </div>
           <div class="form-group">
             <label for="iuran">Iuran</label>
-            <input type="text" class="form-control" name="iuran" placeholder="8.000.000" required="required" value="<?= $row['iuran']; ?>">
+            <input type="text" class="form-control" name="iuran" required="required" value="<?= $row['iuran']; ?>">
           </div>
           <div class="form-group">
             <label for="jumlahmenunggak">Jumlah Menunggak</label>

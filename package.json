@@ -1,5 +1,24 @@
 {
   "dependencies": {
     "simplelightbox": "^2.7.0"
-  }
+  },
+  "name": "aplikasirisda",
+  "description": "aplikasi pkl bank bri unit kuin alalak banjarmasin",
+  "version": "1.0.0",
+  "main": "simplelightbox.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/madiajijah11/aplikasirisda.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/madiajijah11/aplikasirisda/issues"
+  },
+  "homepage": "https://github.com/madiajijah11/aplikasirisda#readme"
 }

@@ -24,8 +24,8 @@ require_once 'include/auth.php';
               <th>Jenis Kelamin</th>
               <th>Status Kawin</th>
               <th>Nomor Rekening</th>
-              <th>Angsuran</th>
               <th>Pinjaman</th>
+              <th>Angsuran</th>
               <th>Tanggal Pencairan</th>
               <th>Jangka Waktu</th>
             </tr>
@@ -36,7 +36,7 @@ require_once 'include/auth.php';
             $no = 1;
             $sql = mysqli_query($link, "SELECT * FROM peminjamperbulan ORDER BY pinjaman ASC");
             while ($row = mysqli_fetch_array($sql)) {
-              ?>
+            ?>
               <tr>
                 <td><?= $no++; ?></td>
                 <td><?= $row['nik']; ?></td>
@@ -51,7 +51,7 @@ require_once 'include/auth.php';
                 <td><?= $row['tglpencairan']; ?></td>
                 <td><?= $row['jangkawaktu']; ?></td>
               </tr>
-              <?php
+            <?php
             }
             ?>
           </tbody>
