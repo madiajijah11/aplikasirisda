@@ -11,7 +11,6 @@ require_once 'include/auth.php';
     <div class="card mb-4">
       <div class="card-header">Tabel
         <a href="printall-nasabah-lunas.php" target="_blank" class="btn btn-primary float-right mx-2">Print Semua</a>
-        <a href="printall-excel-nasabah-lunas.php" target="_blank" class="btn btn-primary float-right">Export Excel</a>
       </div>
       <div class="card-body table-responsive">
         <table class="table table-sm table-hover table-bordered">
