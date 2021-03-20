@@ -60,13 +60,13 @@ if (isset($_POST['datanasabahmenunggak'])) {
             </select>
             <!-- <input type="text" class="form-control" name="pinjaman" placeholder="Kawin/Belum Kawin/Cerai" required="required"> -->
           </div>
+          <div class="form-group">
+            <label for="angsuran">Angsuran</label>
+            <input type="text" class="form-control" name="angsuran" placeholder="10" required="required">
+          </div>
           <div class="form-group row-cols-lg-5">
             <label for="tgljatuhtempo">Tanggal Jatuh Tempo</label>
             <input type="date" class="form-control" name="tgljatuhtempo" pattern="\d{1,2}-\d{1,2}-\d{4}" required="required">
-          </div>
-          <div class="form-group">
-            <label for="iuran">Iuran</label>
-            <input type="number" class="form-control" name="iuran" placeholder="8000000" required="required">
           </div>
           <div class="form-group">
             <label for="jumlahmenunggak">Jumlah Menunggak</label>

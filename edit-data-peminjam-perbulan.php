@@ -92,7 +92,7 @@ if (isset($_POST['editpeminjamperbulan'])) {
           </div>
           <div class="form-group">
             <label for="angsuran">Angsuran</label>
-            <input type="number" class="form-control" name="angsuran" required="required" value="<?= $row['angsuran'] ?>">
+            <input type="text" class="form-control" name="angsuran" required="required" value="<?= $row['angsuran'] ?>">
           </div>
           <div class="form-group row-cols-lg-5">
             <label for="tglpencairan">Tanggal Pencairan</label>

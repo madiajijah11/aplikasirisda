@@ -13,7 +13,7 @@ require_once 'include/auth.php';
         <a href="printall-nasabah-lunas.php" target="_blank" class="btn btn-primary float-right mx-2">Print Semua</a>
         <a href="printall-excel-nasabah-lunas.php" target="_blank" class="btn btn-primary float-right">Export Excel</a>
       </div>
-      <div class="card-body">
+      <div class="card-body table-responsive">
         <table class="table table-sm table-hover table-bordered">
           <thead>
             <tr>

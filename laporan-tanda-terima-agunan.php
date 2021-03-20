@@ -12,7 +12,7 @@ require_once 'include/auth.php';
       <div class="card-header">Tabel
         <a href="printall-tanda-terima-agunan.php" target="_blank" class="btn btn-primary float-right"><i class="fas fa-print"></i>Print Semua</a>
       </div>
-      <div class="card-body">
+      <div class="card-body table-responsive">
         <table class="table table-sm table-hover table-bordered">
           <thead>
             <tr>

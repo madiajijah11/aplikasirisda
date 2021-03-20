@@ -108,6 +108,7 @@ $tbl_header = '<table style="width: 100%; font-family: arial, sans-serif; border
           <th colspan="4">Alamat</th>
           <th colspan="2">Nomor Rekening</th>
           <th colspan="2">Pinjaman</th>
+          <th colspan="2">Angsuran</th>
           <th colspan="2">Tanggal Jatuh Tempo</th>
           <th colspan="2">Jumlah Menunggak</th>
       </tr>
@@ -130,6 +131,7 @@ while ($row = mysqli_fetch_array($result)) {
   $alamat = $row['alamat'];
   $norekening = $row['norekening'];
   $pinjaman = $row['pinjaman'];
+  $angsuran = $row['angsuran'];
   $tgljatuhtempo = $row['tgljatuhtempo'];
   $jumlahmenunggak = $row['jumlahmenunggak'];
   $no++;
@@ -141,6 +143,7 @@ while ($row = mysqli_fetch_array($result)) {
               <td colspan="4">' . substr($row['alamat'], 0, 255) . '</td>
               <td colspan="2">' . $row['norekening'] . '</td>
               <td colspan="2">Rp.' . number_format($row['pinjaman'], 0, ',', '.') . '</td>
+              <td colspan="2">' . $row['angsuran'] . '</td>
               <td colspan="2" style="text-align: center;">' . $row['tgljatuhtempo'] . '</td>
               <td colspan="2">Rp.' . number_format($row['jumlahmenunggak'], 0, ',', '.') . '</td>
           </tr>';

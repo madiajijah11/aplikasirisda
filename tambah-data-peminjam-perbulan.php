@@ -85,7 +85,7 @@ if (isset($_POST['datapeminjamperbulan'])) {
           </div>
           <div class="form-group">
             <label for="angsuran">Angsuran</label>
-            <input type="number" class="form-control" name="angsuran" placeholder="300000" required="required">
+            <input type="text" class="form-control" name="angsuran" placeholder="10" required="required">
           </div>
           <div class="form-group row-cols-lg-5">
             <label for="tglpencairan">Tanggal Pencairan</label>

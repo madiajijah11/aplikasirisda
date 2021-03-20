@@ -12,7 +12,7 @@ require_once 'include/auth.php';
       <div class="card-header">Tabel
         <a href="printall-nasabah-menunggak.php" target="_blank" class="btn btn-primary float-right">Print Semua</a>
       </div>
-      <div class="card-body">
+      <div class="card-body table-responsive">
         <table class="table table-sm table-hover table-bordered">
           <thead>
             <tr>
@@ -22,6 +22,7 @@ require_once 'include/auth.php';
               <th>Alamat</th>
               <th>Nomor Rekening</th>
               <th>Pinjaman</th>
+              <th>Angsuran</th>
               <th>Tanggal Jatuh Tempo</th>
               <th>Jumlah Menunggak</th>
             </tr>
@@ -32,18 +33,19 @@ require_once 'include/auth.php';
             $no = 1;
             $sql = mysqli_query($link, "SELECT * FROM nasabahmenunggak");
             while ($row = mysqli_fetch_array($sql)) {
-              ?>
+            ?>
               <tr>
                 <td><?= $no++; ?></td>
                 <td><?= $row['nama']; ?></td>
                 <td><?= $row['nohp']; ?></td>
                 <td><?= substr($row['alamat'], 0, 255); ?></td>
                 <td><?= $row['norekening']; ?></td>
-                <td>Rp.<?= number_format($row['pinjaman'] ,0,',','.'); ?></td>
+                <td>Rp.<?= number_format($row['pinjaman'], 0, ',', '.'); ?></td>
+                <td><?= $row['angsuran']; ?></td>
                 <td><?= $row['tgljatuhtempo']; ?></td>
-                <td>Rp. <?= number_format($row['jumlahmenunggak'] ,0,',','.'); ?></td>
+                <td>Rp. <?= number_format($row['jumlahmenunggak'], 0, ',', '.'); ?></td>
               </tr>
-              <?php
+            <?php
             }
             ?>
           </tbody>

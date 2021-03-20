@@ -71,8 +71,8 @@ if (isset($_POST['editnasabahmenunggak'])) {
             <input type="date" class="form-control" name="tgljatuhtempo" pattern="\d{1,2}-\d{1,2}-\d{4}" required="required" value="<?= $row['tgljatuhtempo'] ?>">
           </div>
           <div class="form-group">
-            <label for="iuran">Iuran</label>
-            <input type="text" class="form-control" name="iuran" required="required" value="<?= $row['iuran']; ?>">
+            <label for="angsuran">Angsuran</label>
+            <input type="text" class="form-control" name="angsuran" required="required" value="<?= $row['angsuran']; ?>">
           </div>
           <div class="form-group">
             <label for="jumlahmenunggak">Jumlah Menunggak</label>

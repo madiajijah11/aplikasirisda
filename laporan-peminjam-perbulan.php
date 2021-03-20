@@ -12,7 +12,7 @@ require_once 'include/auth.php';
       <div class="card-header">Tabel
         <a href="printall-peminjam-perbulan.php" target="_blank" class="btn btn-primary float-right">Print Semua</a>
       </div>
-      <div class="card-body">
+      <div class="card-body table-responsive">
         <table class="table table-sm table-hover table-bordered">
           <thead>
             <tr>
@@ -47,7 +47,7 @@ require_once 'include/auth.php';
                 <td><?= $row['statuskawin'] ?></td>
                 <td><?= $row['norekening']; ?></td>
                 <td>Rp.<?= number_format($row['pinjaman'], 0, ',', '.'); ?></td>
-                <td>Rp.<?= number_format($row['angsuran'], 0, ',', '.'); ?></td>
+                <td><?= $row['angsuran']; ?></td>
                 <td><?= $row['tglpencairan']; ?></td>
                 <td><?= $row['jangkawaktu']; ?></td>
               </tr>
