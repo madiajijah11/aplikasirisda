@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 17, 2021 at 10:34 AM
+-- Generation Time: Mar 20, 2021 at 04:05 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.2
 
@@ -85,7 +85,7 @@ CREATE TABLE `nasabahmenunggak` (
   `norekening` varchar(255) NOT NULL,
   `pinjaman` varchar(255) NOT NULL,
   `tgljatuhtempo` date NOT NULL,
-  `iuran` varchar(255) NOT NULL,
+  `angsuran` varchar(255) NOT NULL,
   `jumlahmenunggak` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -93,8 +93,10 @@ CREATE TABLE `nasabahmenunggak` (
 -- Dumping data for table `nasabahmenunggak`
 --
 
-INSERT INTO `nasabahmenunggak` (`id`, `nama`, `nohp`, `alamat`, `norekening`, `pinjaman`, `tgljatuhtempo`, `iuran`, `jumlahmenunggak`) VALUES
-(3, 'Dian Rahmadani', '082256964453', 'Banjarmasin', '8020119980', '25000000', '2023-03-13', '2500000', '20000000');
+INSERT INTO `nasabahmenunggak` (`id`, `nama`, `nohp`, `alamat`, `norekening`, `pinjaman`, `tgljatuhtempo`, `angsuran`, `jumlahmenunggak`) VALUES
+(3, 'Dian Rahmadani', '082256964453', 'Banjarmasin', '8020119980', '25000000', '2023-03-13', '15', '20000000'),
+(4, 'dian', '082256964453', 'banjarmasin', '8080336648', '20000000', '2021-03-19', '15', '400000'),
+(5, 'sdfsdfsdf', '876865343', 'dfgfdgdf', '5464564', '10000000', '2021-03-26', '15', '4000000');
 
 -- --------------------------------------------------------
 
@@ -122,8 +124,8 @@ CREATE TABLE `peminjamperbulan` (
 --
 
 INSERT INTO `peminjamperbulan` (`id`, `nik`, `nama`, `nohp`, `alamat`, `jeniskelamin`, `statuskawin`, `norekening`, `angsuran`, `pinjaman`, `tglpencairan`, `jangkawaktu`) VALUES
-(7, '16630074', 'Dian Rahmadani', '082256964453', 'Banjarmasin', 'Laki-laki', 'Belum Kawin', '8020119980', '1000000', '25000000', '2021-03-13', '24 Bulan'),
-(8, '16630071', 'Ardi Ramadani Zarkoni', '082256964452', 'Banjarmasin Tengah', 'Laki-laki', 'Belum Kawin', '8020116652', '5000000', '45000000', '2021-03-16', '60 Bulan');
+(7, '16630074', 'Dian Rahmadani', '082256964453', 'Banjarmasin', 'Laki-laki', 'Belum Kawin', '8020119980', '10', '25000000', '2021-03-13', '24 Bulan'),
+(8, '16630071', 'Ardi Ramadani Zarkoni', '082256964452', 'Banjarmasin Tengah', 'Laki-laki', 'Belum Kawin', '8020116652', '10', '45000000', '2021-03-16', '60 Bulan');
 
 -- --------------------------------------------------------
 
@@ -259,7 +261,7 @@ ALTER TABLE `nasabahlunas`
 -- AUTO_INCREMENT for table `nasabahmenunggak`
 --
 ALTER TABLE `nasabahmenunggak`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `peminjamperbulan`
