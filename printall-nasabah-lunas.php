@@ -113,7 +113,9 @@ $tbl_header = '<table style="width: 100%; font-family: arial, sans-serif; border
       </tr>
   </thead>
   <tbody>';
+
 $tbl_footer = '</tbody></table>';
+
 $tbl = '';
 
 $con = mysqli_connect("localhost", "root", "", "aplikasirisda");
@@ -147,7 +149,15 @@ while ($row = mysqli_fetch_array($result)) {
 
 // Print text using writeHTMLCell()
 $pdf->writeHTML($tbl_header . $tbl . $tbl_footer, true, false, false, false, '');
-
+$pdf->Cell(260, 0, "Banjarmasin, " . date("d M Y"), 0, 0, 'R');
+$pdf->ln(4);
+$pdf->Cell(250, 0, "Mengetahui,", 0, 0, 'R');
+$pdf->ln(4);
+$pdf->Cell(267, 0, "Kepala Unit BANK BRI Kuin Alalak", 0, 0, 'R');
+$pdf->ln(20);
+$pdf->Cell(255, 0, "Taufik Kurrahman", 0, 0, 'R');
+$pdf->ln(4);
+$pdf->Cell(255, 0, "NIP.0000000000", 0, 0, 'R');
 // ---------------------------------------------------------
 
 // Close and output PDF document
