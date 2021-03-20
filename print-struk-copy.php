@@ -97,7 +97,7 @@ $pdf->ln(10);
 $pdf->SetFont('dejavusans', '', 10, '', true);
 $pdf->Cell(50, 10, "Print pada : " . date("d/m/Y"), 0, 0, 'C');
 $pdf->ln(10);
-$pdf->Cell(0. );
+$pdf->Cell(0.);
 // Set some content to print
 $tbl_header = '<table style="width: 100%; font-family: arial, sans-serif; border-collapse: collapse;" border="1" cellpadding="2" cellspacing="2">
 <thead>
@@ -151,9 +151,9 @@ $pdf->Cell(250, 0, "Mengetahui,", 0, 0, 'R');
 $pdf->ln(4);
 $pdf->Cell(267, 0, "Kepala Unit BANK BRI Kuin Alalak", 0, 0, 'R');
 $pdf->ln(20);
-$pdf->Cell(255, 0, "Taufik Kurrahman", 0, 0, 'R');
+$pdf->Cell(255, 0, "Taufik Khurohman", 0, 0, 'R');
 $pdf->ln(4);
-$pdf->Cell(255, 0, "NIP.0000000000", 0, 0, 'R');
+
 
 // ---------------------------------------------------------
 
